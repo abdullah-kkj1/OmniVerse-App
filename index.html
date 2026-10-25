@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniVerse Studio - AI & Dev Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Canvas for Grid/Particles -->
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="app-container">
+    <!-- Header / Navbar -->
+    <header class="topbar">
+      <div class="logo">
+        <i class="fa-solid fa-atom logo-icon"></i>
+        <span>OmniVerse <small>OS v3.0</small></span>
+      </div>
+      <div class="top-actions">
+        <button id="btn-key" class="btn btn-warning"><i class="fa-solid fa-key"></i> Setup API Key</button>
+        <div class="status-badge"><span class="pulse"></span> Online</div>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="main-content">
+      
+      <!-- AI Chat Assistant Panel -->
+      <section class="card ai-card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-robot"></i> Nexus Gemini AI Assistant</h3>
+          <span class="badge" id="ai-status">Simulation Mode</span>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="msg ai-msg">
+            Salam! Main aapka Gemini AI Assistant hoon. API key set karein aur mujhse koi bhi HTML, CSS ya JS code poochein!
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <input type="text" id="chat-input" placeholder="Yahan apna sawaal ya code requirement likhein...">
+          <button id="btn-send" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send</button>
+        </div>
+      </section>
+
+      <!-- Live Code Editor / Playground Panel -->
+      <section class="card ide-card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-code"></i> Live HTML/CSS/JS Playground</h3>
+          <button id="btn-run" class="btn btn-success"><i class="fa-solid fa-play"></i> Run Code</button>
+        </div>
+        <div class="ide-body">
+          <textarea id="code-input" spellcheck="false" placeholder="Write HTML & CSS code here..."><!-- Example Code -->
+<div style="text-align:center; padding: 20px; font-family: sans-serif;">
+  <h2 style="color: #00f2fe;">Hello OmniVerse!</h2>
+  <p style="color: #aaa;">Is code ko change karke 'Run Code' par click karein.</p>
+</div></textarea>
+          <iframe id="code-output" title="Live Preview"></iframe>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- API Key Modal -->
+  <div class="modal" id="api-modal">
+    <div class="modal-content">
+      <h2><i class="fa-solid fa-key"></i> Gemini API Key Config</h2>
+      <p>Apni Free Gemini API Key daalein taake AI accurate answers de sake.</p>
+      <input type="password" id="api-key-input" placeholder="Paste your API key (AIzaSy...)">
+      <div class="modal-actions">
+        <button id="btn-save-key" class="btn btn-success">Save Key</button>
+        <button id="btn-close-modal" class="btn btn-secondary">Close</button>
+      </div>
+      <p class="help-text">
+        <a href="https://aistudio.google.com/app/apikey" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Yahan se Free API Key Banayein (Google AI Studio)</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
